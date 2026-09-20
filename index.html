@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0d0c">
+    <title>NODE/3210</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="NODE 3210 dashboard">
+      <header class="statusline">
+        <span>NODE/3210</span>
+        <span id="clock" aria-live="polite">--:--</span>
+      </header>
+
+      <section id="home" class="screen active" aria-labelledby="home-title">
+        <p class="eyebrow">CONNECTED / MINIMAL / ONLINE</p>
+        <h1 id="home-title">GOOD <span id="day-part">DAY</span>.</h1>
+        <p class="date" id="date">Loading date…</p>
+
+        <div class="terminal-card" aria-live="polite">
+          <p><span class="prompt">&gt;</span> system ready</p>
+          <p><span class="prompt">&gt;</span> keep the signal, lose the noise</p>
+        </div>
+
+        <nav class="command-list" aria-label="Dashboard commands">
+          <button class="command" data-screen="links"><span>01</span> LINKS <b>›</b></button>
+          <button class="command" data-screen="focus"><span>02</span> FOCUS <b>›</b></button>
+          <button class="command" data-screen="about"><span>03</span> SYSTEM <b>›</b></button>
+        </nav>
+      </section>
+
+      <section id="links" class="screen" aria-labelledby="links-title" hidden>
+        <p class="eyebrow">SHORTCUTS / WEB</p>
+        <h2 id="links-title">LINKS</h2>
+        <nav class="command-list" aria-label="Useful web links">
+          <a class="command" href="https://www.bbc.com/news"><span>01</span> BBC NEWS <b>↗</b></a>
+          <a class="command" href="https://www.wikipedia.org/"><span>02</span> WIKIPEDIA <b>↗</b></a>
+          <a class="command" href="https://www.youtube.com/"><span>03</span> YOUTUBE <b>↗</b></a>
+        </nav>
+        <button class="back" data-screen="home">‹ BACK</button>
+      </section>
+
+      <section id="focus" class="screen" aria-labelledby="focus-title" hidden>
+        <p class="eyebrow">FOCUS MODE / LOCAL</p>
+        <h2 id="focus-title">ONE THING.</h2>
+        <label for="focus-task">What matters now?</label>
+        <input id="focus-task" type="text" maxlength="44" placeholder="Type one task" autocomplete="off">
+        <button id="save-focus" class="primary">SAVE FOR THIS SESSION</button>
+        <p id="focus-result" class="result" aria-live="polite"></p>
+        <button class="back" data-screen="home">‹ BACK</button>
+      </section>
+
+      <section id="about" class="screen" aria-labelledby="about-title" hidden>
+        <p class="eyebrow">SYSTEM / BUILD 01</p>
+        <h2 id="about-title">NODE/3210</h2>
+        <dl>
+          <div><dt>MODE</dt><dd>minimal signal</dd></div>
+          <div><dt>DESIGNED FOR</dt><dd>240 × 320 displays</dd></div>
+          <div><dt>DATA</dt><dd>nothing stored</dd></div>
+        </dl>
+        <button class="back" data-screen="home">‹ BACK</button>
+      </section>
+
+      <footer><span>▲▼ SELECT</span><span>END = EXIT</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
+
